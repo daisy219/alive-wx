@@ -1,0 +1,15 @@
+<!--miniprogram/pages/enterInfo/enterInfo.wxml-->
+<view class="container">
+  <form>
+    <view class="page-section">
+      <view class="page-section-title">input</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd" style="margin: 30rpx 0" >
+            <input class="weui-input" name="input" placeholder="这是一个输入框" />
+          </view>
+        </view>
+      </view>
+    </view>
+  </form>
+</view>

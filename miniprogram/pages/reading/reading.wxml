@@ -1,0 +1,4 @@
+<!--miniprogram/pages/reading/reading.wxml-->
+<view class="container">
+读书协会
+</view>

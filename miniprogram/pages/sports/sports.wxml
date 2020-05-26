@@ -1,0 +1,4 @@
+<!--miniprogram/pages/sports.wxml-->
+<view class="container">
+健身俱乐部
+</view>

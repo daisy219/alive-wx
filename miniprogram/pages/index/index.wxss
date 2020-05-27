@@ -1,9 +1,35 @@
 /**index.wxss**/
 
-page {
-  background: #f6f6f6;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+.banner {
+  width: 100%;
+  box-shadow: 5px 5px 8px #888;
+}
+.info-text {
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: #636FA4;
+  text-align: center;
+}
+.message-content {
+  width: 100%;
+}
+.message-item {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 40rpx;
+}
+.message-item .image {
+  margin-right: 60rpx;
+  padding-top: 16rpx;
+}
+.message-item .name {
+  font-size: 34rpx;
+  color: #999;
+  line-height: 60rpx;
+}
+.message-item .message {
+  font-size: 34rpx;
+  color: #666;
+  line-height: 60rpx;
 }
 

@@ -1,6 +1,25 @@
 <!--index.wxml-->
 <view class="container">
-  <view></view>
-  <navigator class="main-navigator" open-type="navigate" url="../enterInfo/enterInfo">录入信息</navigator>
-
+  <!-- <navigator class="main-navigator" open-type="navigate" url="../enterInfo/enterInfo">录入信息</navigator> -->
+  <van-grid column-num="2" border="{{ false }}" class="banner">
+    <van-grid-item use-slot>
+      <van-image fit="cover" width="100" height="100" src="/images/home_sports.png"/>
+      <text class="info-text">{{ sportsInfoText }}</text>
+    </van-grid-item>
+    <van-grid-item use-slot>
+      <van-image fit="cover" width="100" height="100" src="/images/home_reading.png"/>
+      <text class="info-text">{{ readingInfoText }}</text>
+    </van-grid-item>
+  </van-grid>
+  <text class="big-title">留言板</text>
+  <van-divider wx:if="{{false}}" class="no-data" contentPosition="center">暂无数据</van-divider>
+  <view class="message-content">
+    <view wx:for="{{ messageList }}" wx:key="index" class="clearfix message-item">
+      <van-image round class="fl image" fit="cover" width="30" height="30" src="{{item.url}}"/>
+      <view class="fl text">
+        <view class="name">{{ item.name }}</view>
+        <view class="message">{{ item.message }}</view>
+      </view>
+    </view>
+  </view>
 </view>

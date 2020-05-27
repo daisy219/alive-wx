@@ -7,7 +7,15 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    sportsInfoText: ' 已经坚持运动3天！',
+    readingInfoText: '已经读完3本书！',
+    messageList: [
+      { url: '/images/home_reading.png', name: '赵阳', message: '天气不错！' },
+      { url: '/images/home_reading.png', name: '赵阳', message: '天气不错！' },
+      { url: '/images/home_reading.png', name: '赵阳', message: '天气不错！' },
+      { url: '/images/home_reading.png', name: '赵阳', message: '天气不错！' }
+    ]
   },
   onLoad: function() {
     if (!wx.cloud) {

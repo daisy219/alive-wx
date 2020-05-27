@@ -7,15 +7,36 @@
   box-sizing: border-box;
 }
 page {
-  background: #f6f6f6;
+  background: #fff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
+.clearfix:after { 
+  clear: both;
+  content: ' ';
+  display: block;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+  
 .main-navigator {
   padding: 4px 20px;
   border-radius: 4px;
   background-color: #636FA4;
   color: #fff;
+}
+.big-title {
+  margin: 40rpx 0;
+  line-height: 60rpx;
+  font-size: 40rpx;
+  color: #ff9472;
+}
+.no-data {
+  width: 100%;
 }
 

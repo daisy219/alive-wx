@@ -1,0 +1,7 @@
+{
+  "name": "alive",
+  "version": "1.0.0",
+  "description": "",
+  "miniprogram": "dist",
+  "devDependencies": {}
+}

@@ -25,7 +25,7 @@
       },
       {
         "pagePath": "pages/sports/sports",
-        "text": "健身俱乐部",
+        "text": "健身协会",
         "iconPath": "./images/icon/sports.png",
         "selectedIconPath": "./images/icon/sports_active.png"
       },

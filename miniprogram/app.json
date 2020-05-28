@@ -11,7 +11,8 @@
     "pages/sports/sports",
     "pages/reading/reading",
     "pages/person/person",
-    "pages/enterInfo/enterInfo"
+    "pages/enterInfo/enterInfo",
+    "pages/sportsRenew/sportsRenew"
   ],
   "tabBar": {
     "color": "#707070",

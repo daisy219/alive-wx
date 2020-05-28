@@ -1,0 +1,4 @@
+<!--miniprogram/pages/sportsRenew/sportsRenew.wxml-->
+<view class="container">
+  <my-calendar/>
+</view>

@@ -1,0 +1,8 @@
+<!--components/calendar/calendar.wxml-->
+<view class="container">
+  <view class="my-calendar">
+    <van-calendar show-title="{{ false }}" poppable="{{ false }}" row-height="{{ 40 }}" show-confirm="{{ false }}"
+      bind:select="onSelect"/>
+  </view>
+
+</view>

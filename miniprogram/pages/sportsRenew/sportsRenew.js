@@ -1,12 +1,11 @@
-// miniprogram/pages/sports.js
-import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
+// miniprogram/pages/sportsRenew/sportsRenew.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    dialogShow: false,
+
   },
 
   /**
@@ -63,18 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  /**
-   * 打开打卡弹框
-   */
-  openDialog: function() {
-    this.setData({dialogShow: true})
-  },    
-  /**
-   * 打卡
-   */
-  punch: function() {
-    Toast.success('打卡成功！');
   }
 })

@@ -1,4 +1,29 @@
 <!--miniprogram/pages/sports.wxml-->
 <view class="container">
-健身俱乐部
+<van-grid column-num="3" class="btn-group-grid sports-btn">
+  <van-grid-item use-slot bind:click="punch">
+    <van-image fit="cover" width="50" height="50" src="/images/punch.png"/>
+    <text class="btn-text">打卡</text>
+  </van-grid-item>
+  <van-grid-item use-slot url="../sportsRenew/sportsRenew">
+    <van-image fit="cover" width="50" height="50" src="/images/punch_renew.png"/>
+    <text class="btn-text">补卡</text>
+  </van-grid-item>
+  <van-grid-item use-slot>
+    <van-image fit="cover" width="50" height="50" src="/images/record.png"/>
+    <text class="btn-text">查看记录</text>
+  </van-grid-item>
+</van-grid>
+<van-dialog
+  use-slot
+  title="标题"
+  show="{{ dialogShow }}"
+  show-cancel-button
+  bind:close="onClose"
+  bind:getuserinfo="getUserInfo"
+>
+  <image src="https://img.yzcdn.cn/1.jpg" />
+</van-dialog>
+
+<van-toast id="van-toast" />
 </view>

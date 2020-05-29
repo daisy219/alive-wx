@@ -1,5 +1,4 @@
 /* components/calendar/calendar.wxss */
 .my-calendar {
-  height: 600rpx;
-  overflow: auto;
+  height: 700rpx;
 }

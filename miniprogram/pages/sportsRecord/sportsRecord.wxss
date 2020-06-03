@@ -1,0 +1,11 @@
+/* miniprogram/pages/sportsRecord/sportsRecord.wxss */
+.sports-record-page {
+  width: 95%;
+  margin: 10rpx auto;
+}
+.sports-record-page .punch-time {
+  margin-top: 50rpx;
+  line-height: 50rpx;
+  font-size: 34rpx;
+  color: #636FA4;
+}

@@ -1,1 +1,12 @@
 /* miniprogram/pages/sportsRenew/sportsRenew.wxss */
+.sports-renew-page {
+  width: 95%;
+  margin: 10rpx auto;
+
+}
+.sports-renew-page .btn {
+  --button-default-color: #fff;
+  --button-default-background-color: pink;
+  --button-default-border-color: pink;
+  margin-top: 50rpx;
+}

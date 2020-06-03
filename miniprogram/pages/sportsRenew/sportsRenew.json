@@ -1,5 +1,8 @@
 {
   "usingComponents": {
-    "my-calendar": "../../components/calendar/calendar"
-  }
+    "my-calendar": "../../components/calendar/calendar",
+    "van-button": "@vant/weapp/button/index",
+    "van-toast": "@vant/weapp/toast/index"
+  },
+  "navigationBarTitleText": "健身补卡"
 }

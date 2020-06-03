@@ -1,4 +1,7 @@
 <!--miniprogram/pages/sportsRenew/sportsRenew.wxml-->
-<view class="container">
-  <my-calendar/>
+<view class="container sports-renew-page">
+  <my-calendar bind:dayTouch="dayTouch"/>
+  <van-button class="btn" bind:click="reNewClick">补卡</van-button>
+  <!-- <van-button type="info" send-message-path="../sports/sports">返回</van-button> -->
+  <van-toast id="van-toast" />
 </view>

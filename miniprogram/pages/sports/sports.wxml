@@ -9,7 +9,7 @@
     <van-image fit="cover" width="50" height="50" src="/images/punch_renew.png"/>
     <text class="btn-text">补卡</text>
   </van-grid-item>
-  <van-grid-item use-slot>
+  <van-grid-item use-slot url="../sportsRecord/sportsRecord">
     <van-image fit="cover" width="50" height="50" src="/images/record.png"/>
     <text class="btn-text">查看记录</text>
   </van-grid-item>

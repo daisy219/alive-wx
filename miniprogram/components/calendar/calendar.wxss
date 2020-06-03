@@ -1,4 +1,64 @@
 /* components/calendar/calendar.wxss */
-.my-calendar {
-  height: 700rpx;
+.daisy-calendar {
+  border: 1px solid #f5f5f5;
+  border-radius: 4px;
+  padding: 30rpx;
+  color: #303133;
+}
+.daisy-calendar .daisy-calendar-title {
+  text-align: center;
+  font-size: 40rpx;
+  line-height: 80rpx;
+  margin-bottom: 10rpx;
+}
+.daisy-calendar .daisy-calendar-btn-group-wrap {
+  height: 60rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #f5f5f5;
+  margin-bottom: 20rpx;
+}
+.daisy-calendar .daisy-calendar-btn-group {
+  text-align: right;
+  border-radius: 4px;
+  border: 1px solid #f5f5f5;
+  overflow: hidden;
+  float: right;
+  color: #666;
+}
+.daisy-calendar .daisy-calendar-btn-group .item {
+  font-size: 30rpx;
+  line-height: 40rpx;
+  padding: 8rpx 16rpx;
+  border-right: 1px solid  #f5f5f5;
+  float: left;
+}
+.daisy-calendar .daisy-calendar-btn-group .item:last-child {
+  border-right: none;
+}
+.daisy-calendar .daisy-calendar-week-row {
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  justify-content: space-around;
+}
+.daisy-calendar .daisy-calendar-week-row .item {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 38rpx;
+}
+.daisy-calendar .daisy-calendar-day-content {
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-wrap: wrap;
+}
+.daisy-calendar .daisy-calendar-day-content .item {
+  width: calc(100% / 7);
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 38rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.daisy-calendar .daisy-calendar-day-content .active {
+  color: #fff;
 }

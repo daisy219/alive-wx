@@ -1,12 +1,11 @@
-// miniprogram/pages/sportsRenew/sportsRenew.js
-import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
+// miniprogram/pages/sportsRecord/sportsRecord.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    currentDay: null
+    recordList: ['2020/6/3', '2020/6/4', '2020/6/5'],
   },
 
   /**
@@ -63,20 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  /**
-   * 点击某一天
-   */
-  dayTouch(val) {
-    this.setData({ currentDay: val.detail.date });
-    console.log(val);
-  },
-
-  /**
-   * 点击补卡
-   */
-  reNewClick: function() {
-    console.log(11);
-    Toast.success('补卡成功！');
   }
 })

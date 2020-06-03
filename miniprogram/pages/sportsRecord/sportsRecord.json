@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "my-calendar": "../../components/calendar/calendar"
+  },
+  "navigationBarTitleText": "查看健身打卡记录"
+}

@@ -1,8 +1,29 @@
 <!--components/calendar/calendar.wxml-->
-<view class="container">
-  <view class="my-calendar">
-    <van-calendar show-title="{{ false }}" poppable="{{ false }}" row-height="36" show-confirm="{{ false }}" color="#f27121"
-      bind:select="onSelect"/>
+
+<view class="daisy-calendar">
+  <view class="daisy-calendar-title">
+    <text>{{currentYear}}年{{currentMonth}}月</text>
+  </view>
+  <view class="daisy-calendar-btn-group-wrap">
+    <view class="daisy-calendar-btn-group">
+      <view class="item" bindtap="preMonth">上个月</view>
+      <view class="item" bindtap="backToday">今天</view>
+      <view class="item" bindtap="nextMonth">下个月</view>
+    </view>
   </view>
 
+  <view class="daisy-calendar-week-row">
+    <view wx:for="{{ weekArr }}" wx:key="item" wx:key="item" class="item">{{ item }}</view>
+  </view>
+  <view class="daisy-calendar-day-content">
+    <!-- 空格区域 -->
+    <view class="item" wx:for="{{ blankDayItem }}" wx:key="item"></view>
+    <!-- 日期区域 -->
+    <view class="item {{item.dayText === currentDate ? 'active' : '' }} {{ item.special ? 'special-item' : '' }}"
+      style="background-color: {{ item.dayText === currentDate ? mainColor : '' }}; color: {{ item.special ? specialFontColor : '' }}" 
+      wx:for="{{ currentMonthDays }}" wx:key="index" data-day="{{ item.dayText }}" data-date="{{ item.date }}" data-special="{{ item.special }}"
+      bindtap="dayClick">
+        {{ item.dayText }}
+      </view>
+  </view>
 </view>

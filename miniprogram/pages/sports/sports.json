@@ -5,5 +5,6 @@
     "van-grid-item": "@vant/weapp/grid-item/index",
     "van-image": "@vant/weapp/image/index",
     "van-toast": "@vant/weapp/toast/index"
-  }
+  },
+  "navigationBarTitleText": "健身协会"
 }

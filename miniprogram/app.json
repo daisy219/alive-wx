@@ -16,8 +16,9 @@
     "pages/sportsRecord/sportsRecord"
   ],
   "tabBar": {
-    "color": "#707070",
-    "selectedColor": "#fd746c",
+    "color": "#bfbfbf",
+    "selectedColor": "#fff",
+    "backgroundColor": "#141E30",
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -46,11 +47,11 @@
     ]
   },
   "window": {
-    "backgroundColor": "#FFAFBD",
+    "backgroundColor": "#141E30",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#141E30",
     "navigationBarTitleText": "恰恰好",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"

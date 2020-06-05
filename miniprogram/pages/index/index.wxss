@@ -1,17 +1,54 @@
 /**index.wxss**/
-
-.banner {
+.home {
+  background: url('https://7369-sicilymarmot-e7t9f-1302241243.tcb.qcloud.la/bg2.jpg?sign=1586c8d81cd66c5f91b771ca9968f6f2&t=1591336788');
+  background-size: cover;
+}
+.leave-message {
   width: 100%;
-  box-shadow: 5px 5px 8px #888;
+}
+.home .van-search {
+  background: none;
+  --search-background-color: rgba(0, 0, 0, 0);
+  border-bottom: 1px solid #fff;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.home .van-search .van-icon-like-o {
+  color:pink;
+  margin-right: 10px;
+}
+
+.home .banner {
+  width: 100%;
+  padding: 50rpx 0;
+  background: rgba(20, 30, 48, 0.2);
+  margin: 20px 0;
 }
 .info-text {
   line-height: 60rpx;
   font-size: 30rpx;
-  color: #636FA4;
+  color: #fff;
   text-align: center;
 }
-.message-content {
+.banner-col {
+  text-align: center;
+}
+.home-info {
+  color: #fff;
+  line-height: 100rpx;
+  font-size: 30rpx;
+}
+.home-big-font {
+  color: #fff;
+  font-size: 50rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+.message-module {
+  background: rgba(20, 30, 48, 0.8);
   width: 100%;
+  margin-top: 20px;
 }
 .message-item {
   width: 80%;
@@ -22,14 +59,22 @@
   margin-right: 60rpx;
   padding-top: 16rpx;
 }
+.big-title {
+  margin-bottom: 20rpx;
+  line-height: 100rpx;
+  font-size: 36rpx;
+  color: #fff;
+  text-align: center;
+  border-bottom: 1px solid #fff;
+}
 .message-item .name {
   font-size: 34rpx;
-  color: #999;
+  color: #fff;
   line-height: 60rpx;
 }
 .message-item .message {
   font-size: 34rpx;
-  color: #666;
+  color: #fff;
   line-height: 60rpx;
 }
 

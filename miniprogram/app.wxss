@@ -30,12 +30,7 @@ page {
   background-color: #636FA4;
   color: #fff;
 }
-.big-title {
-  margin: 40rpx 0;
-  line-height: 60rpx;
-  font-size: 40rpx;
-  color: #ff9472;
-}
+
 .no-data {
   width: 100%;
 }

@@ -1,25 +1,41 @@
 <!--index.wxml-->
-<view class="container">
-  <!-- <navigator class="main-navigator" open-type="navigate" url="../enterInfo/enterInfo">录入信息</navigator> -->
-  <van-grid column-num="2" border="{{ false }}" class="banner">
-    <van-grid-item use-slot>
-      <van-image fit="cover" width="100" height="100" src="/images/home_sports.png"/>
-      <text class="info-text">{{ sportsInfoText }}</text>
-    </van-grid-item>
-    <van-grid-item use-slot>
-      <van-image fit="cover" width="100" height="100" src="/images/home_reading.png"/>
-      <text class="info-text">{{ readingInfoText }}</text>
-    </van-grid-item>
-  </van-grid>
-  <text class="big-title">留言板</text>
-  <van-divider wx:if="{{false}}" class="no-data" contentPosition="center">暂无数据</van-divider>
-  <view class="message-content">
-    <view wx:for="{{ messageList }}" wx:key="index" class="clearfix message-item">
-      <van-image round class="fl image" fit="cover" width="30" height="30" src="{{item.url}}"/>
-      <view class="fl text">
-        <view class="name">{{ item.name }}</view>
-        <view class="message">{{ item.message }}</view>
+<view class="container home">
+<van-row class="leave-message">
+  <van-col span="17" offset="1">
+    <van-search value="{{ searchValue }}" use-left-icon-slot background="none" placeholder="激励下自己和朋友们吧~" >
+      <van-icon name="like-o" slot="left-icon"/>
+    </van-search>
+  </van-col>
+  <van-col offset="1" span="2">
+    <van-button type="primary" size="small" color="pink"
+      custom-style="width: 44px; min-height: 30px; margin-top: 14px">提交</van-button>
+  </van-col>
+</van-row>
+
+  <van-row class="banner">
+    <van-col span="12" class="banner-col">
+      <van-image fit="cover" width="100" height="100" src="/images/sports.png"/>
+      <view class="info-text">{{ sportsInfoText }}</view>
+    </van-col>
+    <van-col span="12" class="banner-col">
+      <van-image fit="cover" width="100" height="100" src="/images/reading.png"/>
+      <view class="info-text">{{ readingInfoText }}</view>
+    </van-col>
+  </van-row>
+  <view class="home-info">新的一天从不想起床开始。</view>
+  <view class="home-info">醒了吗？我的朋友，是不是已经开始期待下班~</view>
+  <view class="message-module">
+    <view class="big-title">留言板</view>
+    <van-divider wx:if="{{false}}" class="no-data" contentPosition="center">暂无数据</van-divider>
+    <view class="message-content">
+      <view wx:for="{{ messageList }}" wx:key="index" class="clearfix message-item">
+        <van-image round class="fl image" fit="cover" width="30" height="30" src="{{item.url}}"/>
+        <view class="fl text">
+          <view class="name">{{ item.name }}</view>
+          <view class="message">{{ item.message }}</view>
+        </view>
       </view>
     </view>
   </view>
+
 </view>

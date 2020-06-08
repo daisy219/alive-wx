@@ -1,6 +1,6 @@
 /**index.wxss**/
 .home {
-  background: url('https://7369-sicilymarmot-e7t9f-1302241243.tcb.qcloud.la/bg2.jpg?sign=1586c8d81cd66c5f91b771ca9968f6f2&t=1591336788');
+  background: url('https://7369-sicilymarmot-e7t9f-1302241243.tcb.qcloud.la/bg.jpg?sign=2a9ae27cb3e6cc5c8d1fc216446faa06&t=1591615627');
   background-size: cover;
 }
 .leave-message {

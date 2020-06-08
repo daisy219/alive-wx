@@ -3,7 +3,7 @@
   border: 1px solid #f5f5f5;
   border-radius: 4px;
   padding: 30rpx;
-  color: #303133;
+  color: #fff;
 }
 .daisy-calendar .daisy-calendar-title {
   text-align: center;
@@ -23,7 +23,7 @@
   border: 1px solid #f5f5f5;
   overflow: hidden;
   float: right;
-  color: #666;
+  color: #fff;
 }
 .daisy-calendar .daisy-calendar-btn-group .item {
   font-size: 30rpx;

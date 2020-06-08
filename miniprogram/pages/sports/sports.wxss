@@ -1,5 +1,4 @@
 /* miniprogram/pages/sports.wxss */
-
 .sports-btn .btn-text {
   font-size: 34rpx;
   color: #636FA4;

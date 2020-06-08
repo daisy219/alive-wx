@@ -5,6 +5,8 @@
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  background: url('https://7369-sicilymarmot-e7t9f-1302241243.tcb.qcloud.la/bg.jpg?sign=2a9ae27cb3e6cc5c8d1fc216446faa06&t=1591615627');
+  background-size: cover;
 }
 page {
   background: #fff;

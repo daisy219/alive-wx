@@ -1,8 +1,8 @@
 /* miniprogram/pages/sportsRenew/sportsRenew.wxss */
 .sports-renew-page {
-  width: 95%;
+  width: 90%;
   margin: 10rpx auto;
-
+  text-align: center;
 }
 .sports-renew-page .btn {
   --button-default-color: #fff;

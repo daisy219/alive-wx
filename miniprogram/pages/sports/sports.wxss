@@ -1,5 +1,8 @@
 /* miniprogram/pages/sports.wxss */
 .sports-btn .btn-text {
-  font-size: 34rpx;
-  color: #636FA4;
+  font-size: 24rpx;
+  color: #fff;
+}
+.sports-page .van-grid-item__content {
+  background: none;
 }

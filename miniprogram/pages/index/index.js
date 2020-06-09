@@ -19,6 +19,7 @@ Page({
     ]
   },
   onLoad: function() {
+    this.onGetOpenid();
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',

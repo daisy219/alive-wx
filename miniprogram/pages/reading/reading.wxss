@@ -1,1 +1,8 @@
 /* miniprogram/pages/reading/reading.wxss */
+.reading-btn .btn-text {
+  font-size: 24rpx;
+  color: #fff;
+}
+.reading-page .van-grid-item__content {
+  background: none;
+}

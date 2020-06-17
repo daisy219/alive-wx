@@ -1,0 +1,23 @@
+/* miniprogram/pages/readingPlan/readingPlan.wxss */
+.reading-plan-content, .reading-plan-add {
+  margin-top: 30px;
+  text-align: center;
+}
+.reading-plan-content .add-plan-btn .van-button {
+  width: 80px;
+}
+.reading-plan-content .add-plan-btn-info {
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 60rpx;
+}
+
+.common-input .field-index--van-field {
+  background: none;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 30px;
+}
+.add-plan-confirm-btn {
+  margin-top: 20px;
+}

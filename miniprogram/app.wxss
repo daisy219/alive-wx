@@ -7,6 +7,7 @@
   box-sizing: border-box;
   background: url('https://7369-sicilymarmot-e7t9f-1302241243.tcb.qcloud.la/bg.jpg?sign=2a9ae27cb3e6cc5c8d1fc216446faa06&t=1591615627');
   background-size: cover;
+  min-height: 700px;
 }
 page {
   background: #fff;
@@ -38,5 +39,14 @@ page {
 }
 .btn-group-grid {
   width: 100%;
+  border-bottom: 1rpx solid #eee;
+}
+.small-title {
+  color:#fff;
+  font-size: 36rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #fff;
+  padding: 0 20px;
+  margin: 20px 0;
 }
 

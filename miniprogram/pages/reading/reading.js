@@ -8,6 +8,7 @@ Page({
    */
   data: {
     openid: '',
+    recommendList: [],
   },
 
   /**
@@ -24,11 +25,12 @@ Page({
   onQuery: function() {
     const db = wx.cloud.database()
     // 查询当前用户所有的 counters
-    db.collection('recommend').where({
-      _openid: this.data.openid
-    }).get({
+    db.collection('recommend').get({
       success: res => {
-        console.log(res);
+        console.log(res.data);
+        this.setData({
+          recommendList: res.data
+        })
       },
       fail: err => {
         wx.showToast({
@@ -38,6 +40,23 @@ Page({
         console.error('[数据库] [查询记录] 失败：', err)
       }
     })
+    // 调用云函数
+    // wx.cloud.callFunction({
+    //   name: 'getRecommend',
+    //   data: {},
+    //   success: res => {
+    //     console.log(res);
+    //     // wx.navigateTo({
+    //     //   url: '../userConsole/userConsole',
+    //     // })
+    //   },
+    //   fail: err => {
+    //     console.error('[云函数] [login] 调用失败', err)
+    //     // wx.navigateTo({
+    //     //   url: '../deployFunctions/deployFunctions',
+    //     // })
+    //   }
+    // })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

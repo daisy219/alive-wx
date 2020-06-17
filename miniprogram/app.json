@@ -13,7 +13,8 @@
     "pages/person/person",
     "pages/enterInfo/enterInfo",
     "pages/sportsRenew/sportsRenew",
-    "pages/sportsRecord/sportsRecord"
+    "pages/sportsRecord/sportsRecord",
+    "pages/readingPlan/readingPlan"
   ],
   "tabBar": {
     "color": "#bfbfbf",

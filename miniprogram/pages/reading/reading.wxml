@@ -5,7 +5,7 @@
       <van-image fit="cover" width="50" height="50" src="/images/reading/done.png"/>
       <text class="btn-text">已读书单</text>
     </van-grid-item>
-    <van-grid-item use-slot url="../sportsRenew/sportsRenew">
+    <van-grid-item use-slot url="../readingPlan/readingPlan">
       <van-image fit="cover" width="50" height="50" src="/images/reading/plan.png"/>
       <text class="btn-text">计划书单</text>
     </van-grid-item>
@@ -14,5 +14,12 @@
       <text class="btn-text">我的随笔</text>
     </van-grid-item>
   </van-grid>
-  <view>最新推荐</view>
+  <view class="small-title">最新推荐</view>
+  <view class="recommend-list">
+    <view class="recommend-item" wx:for="{{ recommendList }}" wx:key="_id">
+      <view class="recommend-title">{{ item.title }}</view>
+      <view class="recommend-author">作者：{{ item.author }}</view>
+      <view class="recommend-desc">{{ item.desc }}</view>
+    </view>
+  </view>
 </view>

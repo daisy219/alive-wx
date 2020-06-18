@@ -50,6 +50,13 @@
 					"id": -1,
 					"name": "pages/readingPlan/readingPlan",
 					"pathName": "pages/readingPlan/readingPlan",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/reading/reading",
+					"pathName": "pages/reading/reading",
 					"scene": null
 				}
 			]

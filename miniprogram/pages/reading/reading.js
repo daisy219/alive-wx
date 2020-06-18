@@ -1,6 +1,6 @@
 // miniprogram/pages/reading/reading.js
 const app = getApp()
-
+import Services from '../../services/index';
 Page({
 
   /**
@@ -22,41 +22,13 @@ Page({
       });
     }
   },
-  onQuery: function() {
-    const db = wx.cloud.database()
-    // 查询当前用户所有的 counters
-    db.collection('recommend').get({
-      success: res => {
-        console.log(res.data);
-        this.setData({
-          recommendList: res.data
-        })
-      },
-      fail: err => {
-        wx.showToast({
-          icon: 'none',
-          title: '查询记录失败'
-        })
-        console.error('[数据库] [查询记录] 失败：', err)
-      }
-    })
-    // 调用云函数
-    // wx.cloud.callFunction({
-    //   name: 'getRecommend',
-    //   data: {},
-    //   success: res => {
-    //     console.log(res);
-    //     // wx.navigateTo({
-    //     //   url: '../userConsole/userConsole',
-    //     // })
-    //   },
-    //   fail: err => {
-    //     console.error('[云函数] [login] 调用失败', err)
-    //     // wx.navigateTo({
-    //     //   url: '../deployFunctions/deployFunctions',
-    //     // })
-    //   }
-    // })
+
+  /** 获取推荐列表 */
+  async onQuery() {
+    const result = await Services.onQuery('recommend');
+    this.setData({
+      recommendList: result.data
+    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

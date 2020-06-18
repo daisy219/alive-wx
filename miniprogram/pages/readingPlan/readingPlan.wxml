@@ -2,15 +2,27 @@
   <view class="reading-plan-content" wx:if="{{ !addPlanDialogShow }}">
     <van-button class="add-plan-btn" color="linear-gradient(to right, #4bb0ff, #6149f6)" icon="plus" size="small" type="primary" bindtap="showAddDialog"/>
     <view class="add-plan-btn-info">添加阅读计划</view>
+    <view class="small-title">我的计划</view>
+    <view wx:for="{{ planList }}" wx:key="index" class="clearfix plan-item">
+      <view class="fl">
+        <view>{{ item.bookTitle }}</view>
+        <view>{{ item.author }}</view>
+        <view>{{ item.date }}</view>
+      </view>
+      <view class="fr">
+        <van-button class="add-plan-btn" size="small" type="primary" bindtap="showAddDialog">读完</van-button>
+        <van-button class="add-plan-btn" size="small" type="primary" bindtap="showAddDialog">删除</van-button>
+      </view>
+    </view>
   </view>
 
   <view class="reading-plan-add" wx:if="{{ addPlanDialogShow }}">
-    <van-field label="书名" value="{{ bookTitle }}" class="common-input" placeholder="请输入书名" border="{{ false }}" />
-    <van-field label="作者" value="{{ author }}" class="common-input" placeholder="请输入作者" border="{{ false }}" />
-    <van-field label="计划开始时间" value="{{ startDate }}" class="common-input" placeholder="请选择时间" border="{{ false }}" readonly bindtap="chooseDate"/>
+    <van-field label="书名" value="{{ bookTitle }}" class="common-input" custom-style="color: #fff" placeholder="请输入书名" border="{{ false }}" bind:change="onTitleChange"/>
+    <van-field label="作者" value="{{ author }}" class="common-input" placeholder="请输入作者" border="{{ false }}" bind:change="onAuthorChange" />
+    <van-field label="计划读完时间" value="{{ planDate }}" class="common-input" placeholder="请选择时间" border="{{ false }}" readonly bindtap="chooseDate"/>
     <van-button class="add-plan-confirm-btn" color="linear-gradient(to right, #4bb0ff, #6149f6)" icon="plus" type="primary" bindtap="submit">确定</van-button>
     <van-popup show="{{ showDatePicker }}" position="bottom" custom-style="height: 50%;">
-      <van-datetime-picker type="date" value="{{ startDate }}" bind:confirm="onCloseChooseDate" bind:cancel="onCloseChooseDate"/>
+      <van-datetime-picker type="date" value="{{ pickerDefaultDate }}" bind:confirm="onConfirmChooseDate" bind:cancel="onCloseChooseDate"/>
     </van-popup>
 
   </view>

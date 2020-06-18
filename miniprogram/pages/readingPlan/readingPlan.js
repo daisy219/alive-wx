@@ -1,4 +1,7 @@
 // miniprogram/pages/readingPlan/readingPlan.js
+import Utils from '../../utils';
+import Services from '../../services/index';
+
 Page({
 
   /**
@@ -11,7 +14,9 @@ Page({
     form: {},
     bookTitle: '',
     author: '',
-    startDate: '',
+    planDate: '',
+    pickerDefaultDate: Date.now(),
+    planList: [],
   },
   /** 打开添加阅读 */
   showAddDialog() {
@@ -24,8 +29,35 @@ Page({
     console.log(event.detail);
   },
   submit() {
-    console.log(this.data.bookTitle);
-    this.setData({ addPlanDialogShow: false })
+    Object.assign(this.data.form, {
+      bookTitle: this.data.bookTitle,
+      author: this.data.author,
+      planDate: this.data.planDate,
+    });
+    this.addPlan(this.data.form);
+    this.setData({ addPlanDialogShow: false });
+  },
+
+  /** 获取计划列表 */
+  async getPlanList() {
+    const result = await Services.onQuery('readingPlan');
+    this.setData({ planList: result.data });
+    console.log(result);
+  },
+
+  /** 向数据库添加数据 */
+  async addPlan(data) {
+    try {
+      await Services.onAdd('readingPlan', data);
+      wx.showToast({
+        title: '添加成功',
+      });
+      this.getPlanList();
+    } catch (err) {
+      wx.showToast({
+        title: '添加失败',
+      })
+    }
   },
   chooseDate() {
     this.setData({ showDatePicker: true })
@@ -33,11 +65,28 @@ Page({
   onCloseChooseDate() {
     this.setData({ showDatePicker: false })
   },
+
+  /** 书名变更 */
+  onTitleChange(event) {
+    this.setData({ bookTitle: event.detail });
+  },
+
+  /** 作者变更 */
+  onAuthorChange(event) {
+    this.setData({ author: event.detail });
+  },
+
+  /** 确认选择时间 */
+  onConfirmChooseDate(event) {
+    console.log(event);
+    this.setData({ planDate: Utils.yyyymmdd(new Date(event.detail)) });
+    this.setData({ showDatePicker: false })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getPlanList();
   },
 
   /**

@@ -18,6 +18,16 @@
   border-bottom: 1px solid #fff;
   margin-bottom: 30px;
 }
+.common-input input {
+  color: #fff;
+  padding-left: 20px;
+}
 .add-plan-confirm-btn {
   margin-top: 20px;
+}
+.plan-item {
+  border-radius: 4px;
+  border: 1px solid #EBEEF5;
+  padding: 10rpx;
+  color: #fff;
 }

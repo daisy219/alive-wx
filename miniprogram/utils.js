@@ -47,5 +47,15 @@ module.exports = {
       arr.push(i);
     }
     return arr;
+  },
+  
+  /**
+   * 获取当前年月日
+   * @param { number | string } date 时间戳
+   * @param { string } connect 连接符
+   */
+  yyyymmdd(date, connect = '-') {
+    return this.getYear(date) + connect + this.getMonth(date) + connect + this.getDate(date);
   }
+
 }

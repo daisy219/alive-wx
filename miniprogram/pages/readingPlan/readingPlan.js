@@ -45,7 +45,6 @@ Page({
     const result = await Services.onQuery('readingPlan');
     this.setData({ loading: false });
     this.setData({ planList: result.data });
-    console.log(result);
   },
 
   /** 向数据库添加数据 */

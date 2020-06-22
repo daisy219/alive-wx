@@ -1,4 +1,5 @@
 //index.js
+import Services from '../../services/index';
 const app = getApp()
 
 Page({
@@ -43,9 +44,31 @@ Page({
           })
         }
       }
-    })
+    });
+    this.getCommentList();
   },
+  /** 获取评论列表 */
+  async getCommentList() {
+    const result = await Services.onQuery('comment');
+    this.setData({messageList: result.data});
+  },
+  async submitComment() {
+    try {
+      await Services.onAdd('comment', {content: 'fdfdf'});
+      wx.showToast({
+        title: '添加成功',
+      });
+      this.getCommentList();
+    } catch (err) {
+      wx.showToast({
+        title: '添加失败',
+      })
+    }
+  },
+  /** 向数据库添加数据 */
+  async addPlan(data) {
 
+  },
   onGetUserInfo: function(e) {
     if (!this.data.logged && e.detail.userInfo) {
       this.setData({

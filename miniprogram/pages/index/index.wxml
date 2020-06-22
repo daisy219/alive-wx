@@ -2,13 +2,13 @@
 <view class="container home">
 <van-row class="leave-message">
   <van-col span="17" offset="1">
-    <van-search value="{{ searchValue }}" use-left-icon-slot background="none" placeholder="激励下自己和朋友们吧~" >
+    <van-search value="{{ searchValue }}" use-left-icon-slot background="none"  placeholder="激励下自己和朋友们吧~" >
       <van-icon name="like-o" slot="left-icon"/>
     </van-search>
   </van-col>
   <van-col offset="1" span="2">
     <van-button type="primary" size="small" color="pink"
-      custom-style="width: 44px; min-height: 30px; margin-top: 14px">提交</van-button>
+      custom-style="width: 44px; min-height: 30px; margin-top: 14px" bindtap="submitComment">提交</van-button>
   </van-col>
 </van-row>
 

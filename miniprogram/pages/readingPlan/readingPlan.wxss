@@ -27,7 +27,36 @@
 }
 .plan-item {
   border-radius: 4px;
-  border: 1px solid #EBEEF5;
+  /* border: 1px solid #E4E7ED; */
+  box-shadow: 2px 2px 5px #606266;
+  background-color: rgba(255, 255, 255, 0.3);
   padding: 10rpx;
   color: #fff;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+}
+.plan-item .card-left {
+  padding-left: 20px;
+}
+.plan-item .plan-item-title {
+  color: #E6A23C;
+  font-size: 26rpx;
+  line-height: 50rpx;
+}
+.plan-item .plan-item-author {
+  color: #909399;
+  font-size: 22rpx;
+  line-height: 50rpx;
+}
+.plan-item .plan-item-planDate {
+  color: #fff;
+  font-size: 22rpx;
+  line-height: 50rpx;
+}
+.plan-item .item-btn-group .van-button {
+  width: 40px;
+  margin-right: 10px;
 }

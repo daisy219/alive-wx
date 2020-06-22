@@ -17,6 +17,7 @@ Page({
     planDate: '',
     pickerDefaultDate: Date.now(),
     planList: [],
+    loading: false
   },
   /** 打开添加阅读 */
   showAddDialog() {
@@ -40,7 +41,9 @@ Page({
 
   /** 获取计划列表 */
   async getPlanList() {
+    this.setData({ loading: true });
     const result = await Services.onQuery('readingPlan');
+    this.setData({ loading: false });
     this.setData({ planList: result.data });
     console.log(result);
   },
@@ -58,6 +61,21 @@ Page({
         title: '添加失败',
       })
     }
+  },
+  /** 删除计划 */
+  async deletePlan(event) {
+    try {
+      await Services.onDelete('readingPlan', event.target.id);
+      wx.showToast({
+        title: '删除成功',
+      });
+      this.getPlanList();
+    } catch (err) {
+      wx.showToast({
+        title: '删除失败',
+      })
+    }
+
   },
   chooseDate() {
     this.setData({ showDatePicker: true })

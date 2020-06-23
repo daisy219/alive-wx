@@ -9,6 +9,7 @@
 .home .van-search {
   background: none;
   --search-background-color: rgba(0, 0, 0, 0);
+  --field-input-text-color: #fff;
   border-bottom: 1px solid #fff;
   padding-bottom: 0;
   padding-left: 0;
@@ -68,13 +69,16 @@
   border-bottom: 1px solid #fff;
 }
 .message-item .name {
-  font-size: 34rpx;
-  color: #fff;
-  line-height: 60rpx;
+  font-size: 26rpx;
+  color: #909399;
+  line-height: 40rpx;
 }
 .message-item .message {
-  font-size: 34rpx;
+  font-size: 30rpx;
   color: #fff;
-  line-height: 60rpx;
+  line-height: 50rpx;
+}
+.leave-message-input{
+  color: #fff
 }
 

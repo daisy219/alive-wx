@@ -45,6 +45,7 @@ Page({
         }
       }
     });
+
     this.getCommentList();
   },
   /** 获取评论列表 */
@@ -52,9 +53,19 @@ Page({
     const result = await Services.onQuery('comment');
     this.setData({messageList: result.data});
   },
+  onChange(e) {
+    this.setData({
+      searchValue: e.detail,
+    });
+  },
   async submitComment() {
+    const params = {
+      content: this.data.searchValue,
+      creater: this.data.userInfo.nickName,
+      avatarUrl: this.data.userInfo.avatarUrl,
+    }
     try {
-      await Services.onAdd('comment', {content: 'fdfdf'});
+      await Services.onAdd('comment', params);
       wx.showToast({
         title: '添加成功',
       });

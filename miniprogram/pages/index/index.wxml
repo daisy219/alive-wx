@@ -2,7 +2,7 @@
 <view class="container home">
 <van-row class="leave-message">
   <van-col span="17" offset="1">
-    <van-search value="{{ searchValue }}" use-left-icon-slot background="none"  placeholder="激励下自己和朋友们吧~" >
+    <van-search value="{{ searchValue }}" bind:change="onChange" use-left-icon-slot background="none"  placeholder="激励下自己和朋友们吧~" >
       <van-icon name="like-o" slot="left-icon"/>
     </van-search>
   </van-col>
@@ -29,10 +29,10 @@
     <van-divider wx:if="{{false}}" class="no-data" contentPosition="center">暂无数据</van-divider>
     <view class="message-content">
       <view wx:for="{{ messageList }}" wx:key="index" class="clearfix message-item">
-        <van-image round class="fl image" fit="cover" width="30" height="30" src="{{item.url}}"/>
+        <van-image round class="fl image" fit="cover" width="40" height="40" src="{{item.avatarUrl}}"/>
         <view class="fl text">
-          <view class="name">{{ item.name }}</view>
-          <view class="message">{{ item.message }}</view>
+          <view class="name">{{ item.creater }}</view>
+          <view class="message">{{ item.content }}</view>
         </view>
       </view>
     </view>

@@ -1,18 +1,22 @@
 // miniprogram/pages/sportsRecord/sportsRecord.js
+import Services from '../../services/index';
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    recordList: ['2020/6/3', '2020/6/4', '2020/6/5'],
+    list: [],
+    recordList: [],
+    timeList: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getRecordList();
   },
 
   /**
@@ -62,5 +66,14 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  /**
+   * 获取打卡记录
+   */
+  async getRecordList() {
+    const result = await Services.onQuery('punchRecord');
+    this.setData({list: result.data});
+    this.setData({recordList: result.data.map(a => a.date)});
+    console.log(this.data.recordList);
+  },
 })

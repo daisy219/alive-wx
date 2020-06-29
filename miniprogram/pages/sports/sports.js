@@ -1,5 +1,7 @@
 // miniprogram/pages/sports.js
 import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
+import Services from '../../services/index';
+
 Page({
 
   /**
@@ -66,7 +68,17 @@ Page({
   /**
    * 打卡
    */
-  punch: function() {
-    Toast.success('打卡成功！');
+  async punch() {
+    const params = {
+      date: new Date().toLocaleDateString(),
+      time: new Date().toTimeString(),
+    }
+    try {
+      await Services.onAdd('punchRecord', params);
+      Toast.success('打卡成功！');
+
+    } catch (err) {
+      Toast.fail('打卡失败');
+    }
   }
 })

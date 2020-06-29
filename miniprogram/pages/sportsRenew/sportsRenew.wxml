@@ -1,11 +1,19 @@
 <!--miniprogram/pages/sportsRenew/sportsRenew.wxml-->
 <view class="container">
   <view class="sports-renew-page">
-    <view>
+    <view class="calendar-content">
       <my-calendar bind:dayTouch="dayTouch"/>
     </view>
-    <van-button class="btn" bind:click="reNewClick">补卡</van-button>
+    <view style="margin-bottom: 20px;">
+      <van-button class="btn" bind:click="reNewClick">补卡</van-button>
+    </view>
+    <view>
+      <van-button bind:click="back">返回</van-button>
+    </view>
+    
   </view>
-  <!-- <van-button type="info" send-message-path="../sports/sports">返回</van-button> -->
+  <van-popup show="{{ showTimePicker }}" position="bottom" custom-style="height: 50%;">
+    <van-datetime-picker type="time" value="{{ pickerDefaultTime }}" bind:confirm="onConfirmChooseTime" bind:cancel="onCloseChooseTime"/>
+  </van-popup>
   <van-toast id="van-toast" />
 </view>

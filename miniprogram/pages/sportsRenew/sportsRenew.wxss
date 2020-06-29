@@ -4,9 +4,11 @@
   margin: 10rpx auto;
   text-align: center;
 }
+.sports-renew-page .calendar-content {
+  margin-bottom: 50rpx;
+}
 .sports-renew-page .btn {
   --button-default-color: #fff;
   --button-default-background-color: pink;
   --button-default-border-color: pink;
-  margin-top: 50rpx;
 }

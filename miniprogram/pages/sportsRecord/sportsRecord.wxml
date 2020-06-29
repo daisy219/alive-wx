@@ -1,7 +1,7 @@
 <!--miniprogram/pages/sportsRecord/sportsRecord.wxml-->
 <view class="container">
   <view class="sports-record-page">
-    <my-calendar special-date="{{ recordList }}" bind:dayTouch="dayTouch"/>
+    <my-calendar special-date="{{ recordList }}" wx:if="{{ recordList.length !== 0 }}" bind:dayTouch="dayTouch"/>
     <view class="punch-time">
       <text>打卡时间：</text><text>21:30</text>
     </view>

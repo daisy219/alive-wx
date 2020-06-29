@@ -57,6 +57,20 @@
 					"id": -1,
 					"name": "pages/reading/reading",
 					"pathName": "pages/reading/reading",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/sportsRenew/sportsRenew",
+					"pathName": "pages/sportsRenew/sportsRenew",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/sportsRecord/sportsRecord",
+					"pathName": "pages/sportsRecord/sportsRecord",
 					"scene": null
 				}
 			]

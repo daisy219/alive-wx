@@ -70,6 +70,7 @@ Page({
         title: '添加成功',
       });
       this.getCommentList();
+      this.setData({searchValue: ''});
     } catch (err) {
       wx.showToast({
         title: '添加失败',

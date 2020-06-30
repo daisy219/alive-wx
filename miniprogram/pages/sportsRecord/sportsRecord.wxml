@@ -3,7 +3,8 @@
   <view class="sports-record-page">
     <my-calendar special-date="{{ recordList }}" wx:if="{{ recordList.length !== 0 }}" bind:dayTouch="dayTouch"/>
     <view class="punch-time">
-      <text>打卡时间：</text><text>21:30</text>
+      <view>打卡时间：</view>
+      <view wx:for="{{ timeList }}" wx:key="index">{{ item }}</view>
     </view>
   </view>
 </view>

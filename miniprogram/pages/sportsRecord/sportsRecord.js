@@ -67,6 +67,10 @@ Page({
   onShareAppMessage: function () {
 
   },
+  dayTouch(val) {
+    const timeList = this.data.list.filter(a => a.date === val.detail.date).map(a => a.time);
+    this.setData({timeList :timeList});
+  },
   /**
    * 获取打卡记录
    */

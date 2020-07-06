@@ -56,6 +56,15 @@ module.exports = {
    */
   yyyymmdd(date, connect = '-') {
     return this.getYear(date) + connect + this.getMonth(date) + connect + this.getDate(date);
-  }
+  },
 
+  /**
+   * 获取当前时间
+   * @param { number | string } date 时间戳
+   * @param { string } connect 连接符
+   */
+  hhmm(date, connect = ':') {
+    const _date = new Date(date);
+    return _date.getHours() + connect + _date.getMinutes();
+  }
 }

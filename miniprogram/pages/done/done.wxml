@@ -1,0 +1,20 @@
+<!--miniprogram/pages/done/done.wxml-->
+<view class="container done-page">
+  <van-button class="add-btn" color="linear-gradient(to right, #EDDE5D, #F09819)" icon="plus" size="small" type="primary" bindtap="showAddDialog"/>
+  <view class="add-btn-info">添加已读数目</view>
+
+  <view class="done-list">
+    <view class="done-list-item" wx:for="{{ doneList }}" wx:key="index">
+      <view>
+        <view class="item-title">{{ item.title }}</view>
+        <view class="item-author">{{ item.author }}</view>
+        <view class="item-times">读完{{ item.times }}遍</view>
+      </view>
+      <view>
+        <van-button class="add-times-btn" color="#44A08D" size="small" type="primary" bindtap="showAddDialog">
+          又读完了一遍
+        </van-button>
+      </view>
+    </view>
+  </view>
+</view>

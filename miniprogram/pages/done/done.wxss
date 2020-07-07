@@ -1,0 +1,42 @@
+/* miniprogram/pages/done/done.wxss */
+.done-page {
+  color: #fff;
+  padding-top: 30px;
+}
+.done-page .add-btn .van-button {
+  width: 80px;
+}
+.done-page .add-times-btn .van-button {
+  width: 100px;
+}
+.done-page .add-btn-info {
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 60rpx;
+}
+.done-list-item {
+  border-radius: 2px;
+  /* border: 1px solid #E4E7ED; */
+  box-shadow: 2px 2px 3px #606266;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 10rpx;
+  color: #fff;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+}
+.done-list-item .item-title {
+  font-size: 34rpx;
+  line-height: 100rpx;
+}
+.done-list-item .item-author {
+  font-size: 28rpx;
+  line-height: 60rpx;
+  color: #E6A23C;
+}
+.done-list-item .item-times {
+  font-size: 22rpx;
+  line-height: 40rpx;
+}

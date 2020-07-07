@@ -14,7 +14,8 @@
     "pages/enterInfo/enterInfo",
     "pages/sportsRenew/sportsRenew",
     "pages/sportsRecord/sportsRecord",
-    "pages/readingPlan/readingPlan"
+    "pages/readingPlan/readingPlan",
+    "pages/done/done"
   ],
   "tabBar": {
     "color": "#bfbfbf",

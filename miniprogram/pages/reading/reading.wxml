@@ -1,7 +1,7 @@
 <!--miniprogram/pages/reading/reading.wxml-->
 <view class="container reading-page">
   <van-grid column-num="3" class="btn-group-grid reading-btn">
-    <van-grid-item use-slot>
+    <van-grid-item use-slot url="../done/done">
       <van-image fit="cover" width="50" height="50" src="/images/reading/done.png"/>
       <text class="btn-text">已读书单</text>
     </van-grid-item>

@@ -71,6 +71,13 @@
 					"id": -1,
 					"name": "pages/sportsRecord/sportsRecord",
 					"pathName": "pages/sportsRecord/sportsRecord",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/done/done",
+					"pathName": "pages/done/done",
 					"scene": null
 				}
 			]

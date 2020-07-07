@@ -22,8 +22,11 @@
   color: #fff;
   padding-left: 20px;
 }
-.add-plan-confirm-btn {
+.reading-plan-content .btn-group {
   margin-top: 20px;
+}
+.reading-plan-add .add-plan-confirm-btn .van-button {
+  width: 100px;
 }
 .plan-item {
   border-radius: 4px;

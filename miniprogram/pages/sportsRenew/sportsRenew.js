@@ -10,8 +10,8 @@ Page({
    */
   data: {
     showTimePicker: false,
-    pickerDefaultTime: Utils.yyyymmdd(new Date()),
-    currentDay: null
+    pickerDefaultTime: Utils.hhmm(new Date()),
+    currentDay: Utils.yyyymmdd(new Date())
   },
 
   /**

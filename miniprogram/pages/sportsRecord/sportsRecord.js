@@ -41,6 +41,5 @@ Page({
     const result = await Services.onQuery('punchRecord');
     this.setData({list: result.data});
     this.setData({recordList: result.data.map(a => a.date)});
-    console.log(this.data.recordList);
   },
 })

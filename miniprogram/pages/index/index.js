@@ -8,16 +8,9 @@ Page({
     searchValue: '',
     userInfo: {},
     logged: false,
-    takeSession: false,
-    requestResult: '',
-    sportsInfoText: ' 已经坚持运动3天！',
-    readingInfoText: '已经读完3本书！',
-    messageList: [
-      { url: '/images/home_reading.png', name: '赵阳', message: '天气不错！' },
-      { url: '/images/home_reading.png', name: '赵阳', message: '天气不错！' },
-      { url: '/images/home_reading.png', name: '赵阳', message: '天气不错！' },
-      { url: '/images/home_reading.png', name: '赵阳', message: '天气不错！' }
-    ]
+    messageList: [],
+    books: 0,
+    sportsDay: 0,
   },
   onLoad: function() {
     this.onGetOpenid();
@@ -47,7 +40,22 @@ Page({
     });
 
     this.getCommentList();
+    this.getRecordList();
+    this.getDoneList();
   },
+  /** 获取计划列表 */
+  async getDoneList() {
+    const result = await Services.onQuery('done');
+    this.setData({ books: result.data.length });
+  },
+  /**
+   * 获取打卡记录
+   */
+  async getRecordList() {
+    const result = await Services.onQuery('punchRecord');
+    this.setData({sportsDay: new Set(result.data.map(a => a.date)).size});
+  },
+
   /** 获取评论列表 */
   async getCommentList() {
     const result = await Services.onQuery('comment');
@@ -77,10 +85,7 @@ Page({
       })
     }
   },
-  /** 向数据库添加数据 */
-  async addPlan(data) {
 
-  },
   onGetUserInfo: function(e) {
     if (!this.data.logged && e.detail.userInfo) {
       this.setData({

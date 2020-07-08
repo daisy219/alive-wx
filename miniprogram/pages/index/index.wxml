@@ -26,7 +26,7 @@
   <view class="home-info">醒了吗？我的朋友，是不是已经开始期待下班~</view>
   <view class="message-module">
     <view class="big-title">留言板</view>
-    <van-divider wx:if="{{false}}" class="no-data" contentPosition="center">暂无数据</van-divider>
+    <van-divider wx:if="{{ !messageList.length }}" class="no-data" contentPosition="center">暂无留言</van-divider>
     <view class="message-content">
       <view wx:for="{{ messageList }}" wx:key="index" class="clearfix message-item">
         <van-image round class="fl image" fit="cover" width="40" height="40" src="{{item.avatarUrl}}"/>

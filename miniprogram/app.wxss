@@ -35,7 +35,10 @@ page {
 }
 
 .no-data {
+  font-size: 26rpx;
+  color: #909399;
   width: 100%;
+  text-align: center;
 }
 .btn-group-grid {
   width: 100%;

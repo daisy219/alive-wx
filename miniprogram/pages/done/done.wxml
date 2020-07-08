@@ -1,20 +1,36 @@
-<!--miniprogram/pages/done/done.wxml-->
 <view class="container done-page">
-  <van-button class="add-btn" color="linear-gradient(to right, #EDDE5D, #F09819)" icon="plus" size="small" type="primary" bindtap="showAddDialog"/>
-  <view class="add-btn-info">添加已读数目</view>
+<!-- 列表 -->
+  <view class="done-list" wx:if="{{ !addDoneDialogShow }}">
+    <van-button class="add-btn" color="linear-gradient(to right, #EDDE5D, #F09819)" icon="plus" size="small" type="primary" bindtap="showAddDialog"/>
+    <view class="add-btn-info">添加已读数目</view>
 
-  <view class="done-list">
-    <view class="done-list-item" wx:for="{{ doneList }}" wx:key="index">
-      <view>
-        <view class="item-title">{{ item.title }}</view>
-        <view class="item-author">{{ item.author }}</view>
-        <view class="item-times">读完{{ item.times }}遍</view>
-      </view>
-      <view>
-        <van-button class="add-times-btn" color="#44A08D" size="small" type="primary" bindtap="showAddDialog">
-          又读完了一遍
-        </van-button>
+    <view class="done-list" wx:if="{{ doneList && doneList.length !== 0 }}">
+      <view class="done-list-item" wx:for="{{ doneList }}" wx:key="index">
+        <view class="done-list-item-text">
+          <view class="item-title">{{ item.bookTitle }}</view>
+          <view class="item-author">{{ item.author }}</view>
+          <view class="item-times">已读完{{ item.times }}遍</view>
+        </view>
+        <view class="btn-group">
+          <view class="btn-item minus" id="{{ item._id }}" data-times="{{ item.times }}" bindtap="minusDone">-1</view>
+          <view class="btn-item plus" id="{{ item._id }}" data-times="{{ item.times }}" bindtap="plusDone">+1</view>
+          <view class="btn-item delete" id="{{ item._id }}" bindtap="deleteDone">删除</view>
+        </view>
       </view>
     </view>
+    <view class="no-data" wx:if="{{!doneList.length}}">还没有读完的书，加油哦~</view>
   </view>
+  <!-- 添加 -->
+  <view class="reading-done-add" wx:if="{{ addDoneDialogShow }}">
+    <van-field label="书名" value="{{ bookTitle }}" class="common-input" custom-style="color: #fff" placeholder="请输入书名" border="{{ false }}" bind:change="onTitleChange"/>
+    <van-field label="作者" value="{{ author }}" class="common-input" placeholder="请输入作者" border="{{ false }}" bind:change="onAuthorChange" />
+    <van-field label="第几遍" value="{{ times }}" class="common-input" placeholder="请输入已经读完几遍" border="{{ false }}" bind:change="onTimesChange" />
+    <view class="btn-group">
+      <van-button class="add-done-confirm-btn fl" color="linear-gradient(to bottom, #FFFFFF, #EF3B36)" icon="arrow-left" bindtap="closeDialog">返回</van-button>
+      <van-button class="add-done-confirm-btn fr" color="linear-gradient(to bottom, #FFFFFF, #F09819)" icon="plus" type="primary" bindtap="submit">确定</van-button>
+    </view>
+
+  </view>
+  <van-loading color="#6149f6" wx:if="{{ loading }}"/>
+  <van-toast id="van-toast" />
 </view>

@@ -24,25 +24,15 @@ module.exports = {
    * 删除数据
    */
   async onDelete(url, id) {
-    const result = db.collection(url).doc(id).remove();
+    const result = await db.collection(url).doc(id).remove();
     return result;
-    // ({
-      // success: res => {
-      //   wx.showToast({
-      //     title: '删除成功',
-      //   })
-      //   this.setData({
-      //     counterId: '',
-      //     count: null,
-      //   })
-      // },
-      // fail: err => {
-      //   wx.showToast({
-      //     icon: 'none',
-      //     title: '删除失败',
-      //   })
-      //   console.error('[数据库] [删除记录] 失败：', err)
-      // }
-    // })
+  },
+
+  /**
+   * 更新数据
+   */
+  async onUpdate(url, id, data) {
+    const result = await db.collection(url).doc(id).update({data});
+    return result;
   }
 }

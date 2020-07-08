@@ -113,6 +113,27 @@ Page({
     this.setData({ showDatePicker: false })
   },
   /**
+   * 读完
+   */
+  async donePlan(event) {
+    const target = this.data.planList.find(a => a._id === event.target.id);
+    const params = {
+      author: target.author,
+      bookTitle: target.bookTitle,
+      times: 1,
+    };
+    console.log(params);
+    try {
+      await Services.onAdd('done', params);
+      await Services.onDelete('readingPlan', event.target.id);
+      Toast.success('恭喜恭喜');
+      this.getPlanList();
+    } catch (err) {
+      Toast.fail('我的天，好像出现了啥问题');
+    }
+
+  },
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {

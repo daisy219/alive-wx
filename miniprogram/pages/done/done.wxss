@@ -2,12 +2,38 @@
 .done-page {
   color: #fff;
   padding-top: 30px;
+  text-align: center;
 }
 .done-page .add-btn .van-button {
   width: 80px;
 }
-.done-page .add-times-btn .van-button {
-  width: 100px;
+.common-input .field-index--van-field {
+  background: none;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 30px;
+}
+.common-input input {
+  color: #fff;
+  padding-left: 20px;
+}
+.done-page .btn-group .btn-item {
+  padding: 0 20rpx;
+  font-size: 22rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  float: left;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+.done-page .btn-group .minus {
+  background-color: #FDC830;
+}
+.done-page .btn-group .plus {
+  background-color: #F37335;
+}
+.done-page .btn-group .delete {
+  background-color: #f12711;
 }
 .done-page .add-btn-info {
   color: #fff;
@@ -16,10 +42,10 @@
 }
 .done-list-item {
   border-radius: 2px;
-  /* border: 1px solid #E4E7ED; */
-  box-shadow: 2px 2px 3px #606266;
-  background-color: rgba(255, 255, 255, 0.3);
-  padding: 10rpx;
+  /* border: 4px solid #000000; */
+  /* box-shadow: 0 0 3px #6f0000; */
+  background-color: rgba(192, 108, 132, 0.5);
+  padding: 40rpx 10rpx;
   color: #fff;
   margin-bottom: 20px;
   display: flex;
@@ -27,9 +53,13 @@
   justify-content: space-between;
   width: 300px;
 }
+.done-list-item-text {
+  text-align: left;
+}
 .done-list-item .item-title {
   font-size: 34rpx;
   line-height: 100rpx;
+  font-weight: bold;
 }
 .done-list-item .item-author {
   font-size: 28rpx;
@@ -39,4 +69,11 @@
 .done-list-item .item-times {
   font-size: 22rpx;
   line-height: 40rpx;
+  color: #909399;
+}
+.reading-done-add .add-done-confirm-btn .van-button {
+  width: 100px;
+}
+.done-page .no-data {
+  margin-top: 100rpx;
 }

@@ -112,7 +112,7 @@ Page({
     try {
       await Services.onUpdate('done', event.target.id, {times: Number(event.target.dataset.times) + 1});
       wx.showToast({
-        title: '操作成功',
+        title: '历害了历害了',
       });
       this.getDoneList();
     } catch (err) {

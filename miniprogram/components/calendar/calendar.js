@@ -50,6 +50,14 @@ Component({
      * 入口函数
      */
     onLoad() {
+      Utils.watch(this, {
+        specialDate: function (newVal) {
+         this.setData({
+            specialDateStringArr: newVal.map(a => new Date(a).toLocaleDateString())
+          });
+          this.setCurrentStatus(this.data.activeDate);
+        }
+      })
       this.setData({
         specialDateStringArr: this.properties.specialDate.map(a => new Date(a).toLocaleDateString())
       });

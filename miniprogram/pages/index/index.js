@@ -40,14 +40,21 @@ Page({
     });
 
     this.getCommentList();
+  },
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     this.getRecordList();
     this.getDoneList();
   },
+
   /** 获取计划列表 */
   async getDoneList() {
     const result = await Services.onQuery('done');
     this.setData({ books: result.data.length });
   },
+
   /**
    * 获取打卡记录
    */
@@ -61,11 +68,13 @@ Page({
     const result = await Services.onQuery('comment');
     this.setData({messageList: result.data});
   },
+
   onChange(e) {
     this.setData({
       searchValue: e.detail,
     });
   },
+
   async submitComment() {
     const params = {
       content: this.data.searchValue,
@@ -166,5 +175,15 @@ Page({
       }
     })
   },
+  toSports() {
+    wx.switchTab({
+      url: '../sports/sports'
+    })
+  },
 
+  toDone() {
+    wx.redirectTo({
+      url: '../done/done'
+    })  
+  }
 })

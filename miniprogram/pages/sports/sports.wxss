@@ -6,3 +6,19 @@
 .sports-page .van-grid-item__content {
   background: none;
 }
+.sports-record-page {
+  width: 95%;
+  margin: 10rpx auto;
+}
+.sports-record-page .punch-time {
+  margin-top: 50rpx;
+  line-height: 50rpx;
+  font-size: 34rpx;
+  color: #fff;
+}
+.sports-record-page .no-time {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 30rpx;
+  color: #909399;
+}

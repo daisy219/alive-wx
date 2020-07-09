@@ -2,18 +2,21 @@
   <view class="reading-plan-content" wx:if="{{ !addPlanDialogShow }}">
     <van-button class="add-plan-btn" color="linear-gradient(to right, #4bb0ff, #6149f6)" icon="plus" size="small" type="primary" bindtap="showAddDialog"/>
     <view class="add-plan-btn-info">添加阅读计划</view>
-    <view class="small-title">我的计划</view>
-    <view wx:for="{{ planList }}" wx:key="index" class="plan-item">
-      <view class="card-left">
-        <view class="plan-item-title">{{ item.bookTitle }}</view>
-        <view class="plan-item-author">{{ item.author }}</view>
-      </view>
-      <view class="item-btn-group">
-        <van-button class="plan-btn" size="small" bindtap="showAddDialog" color="#2C7744" id="{{item._id}}" bindtap="donePlan">读完</van-button>
-        <van-button class="plan-btn" size="small" bindtap="showAddDialog" color="#e74c3c" id="{{item._id}}" bindtap="deletePlan">删除</van-button>
-        <view class="plan-item-planDate">计划读完日期：{{ item.planDate }}</view>
+    <view wx:if="{{planList.length !== 0}}">
+      <view class="small-title">我的计划</view>
+      <view wx:for="{{ planList }}" wx:key="index" class="plan-item">
+        <view class="card-left">
+          <view class="plan-item-title">{{ item.bookTitle }}</view>
+          <view class="plan-item-author">{{ item.author }}</view>
+        </view>
+        <view class="item-btn-group">
+          <van-button class="plan-btn" size="small" bindtap="showAddDialog" color="#2C7744" id="{{item._id}}" bindtap="donePlan">读完</van-button>
+          <van-button class="plan-btn" size="small" bindtap="showAddDialog" color="#e74c3c" id="{{item._id}}" bindtap="deletePlan">删除</van-button>
+          <view class="plan-item-planDate">计划读完日期：{{ item.planDate }}</view>
+        </view>
       </view>
     </view>
+    <view wx:if="{{planList.length === 0}}" class="no-data">还没有阅读计划，要不加一个？</view>
   </view>
 
   <view class="reading-plan-add" wx:if="{{ addPlanDialogShow }}">

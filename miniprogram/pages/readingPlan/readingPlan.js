@@ -122,7 +122,6 @@ Page({
       bookTitle: target.bookTitle,
       times: 1,
     };
-    console.log(params);
     try {
       await Services.onAdd('done', params);
       await Services.onDelete('readingPlan', event.target.id);
@@ -131,12 +130,11 @@ Page({
     } catch (err) {
       Toast.fail('我的天，好像出现了啥问题');
     }
-
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onShow: function (options) {
     this.getPlanList();
   },
 })

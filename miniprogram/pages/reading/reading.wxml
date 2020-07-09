@@ -1,6 +1,6 @@
 <!--miniprogram/pages/reading/reading.wxml-->
 <view class="container reading-page">
-  <van-grid column-num="3" class="btn-group-grid reading-btn">
+  <van-grid column-num="2" class="btn-group-grid reading-btn">
     <van-grid-item use-slot url="../done/done">
       <van-image fit="cover" width="50" height="50" src="/images/reading/done.png"/>
       <text class="btn-text">已读书单</text>
@@ -9,10 +9,10 @@
       <van-image fit="cover" width="50" height="50" src="/images/reading/plan.png"/>
       <text class="btn-text">计划书单</text>
     </van-grid-item>
-    <van-grid-item use-slot url="../sportsRecord/sportsRecord">
+    <!-- <van-grid-item use-slot url="../sportsRecord/sportsRecord">
       <van-image fit="cover" width="60" height="50" src="/images/reading/talk.png"/>
       <text class="btn-text">我的随笔</text>
-    </van-grid-item>
+    </van-grid-item> -->
   </van-grid>
   <view class="small-title">最新推荐</view>
   <view class="recommend-list">

@@ -1,19 +1,29 @@
 <!--miniprogram/pages/sports.wxml-->
 <view class="container sports-page">
-<van-grid column-num="3" class="btn-group-grid sports-btn">
-  <van-grid-item use-slot bind:click="punch">
-    <van-image fit="cover" width="50" height="50" src="/images/punch.png"/>
-    <text class="btn-text">打卡</text>
-  </van-grid-item>
-  <van-grid-item use-slot url="../sportsRenew/sportsRenew">
-    <van-image fit="cover" width="50" height="50" src="/images/punch_renew.png"/>
-    <text class="btn-text">补卡</text>
-  </van-grid-item>
-  <van-grid-item use-slot url="../sportsRecord/sportsRecord">
-    <van-image fit="cover" width="50" height="50" src="/images/record.png"/>
-    <text class="btn-text">查看记录</text>
-  </van-grid-item>
-</van-grid>
-
-<van-toast id="van-toast" />
+  <van-grid column-num="2" class="btn-group-grid sports-btn">
+    <van-grid-item use-slot bind:click="punch">
+      <van-image fit="cover" width="50" height="50" src="/images/punch.png"/>
+      <text class="btn-text">打卡</text>
+    </van-grid-item>
+    <van-grid-item use-slot bind:click="reNewClick">
+      <van-image fit="cover" width="50" height="50" src="/images/punch_renew.png"/>
+      <text class="btn-text">补卡</text>
+    </van-grid-item>
+    <!-- <van-grid-item use-slot url="../sportsRecord/sportsRecord">
+      <van-image fit="cover" width="50" height="50" src="/images/record.png"/>
+      <text class="btn-text">查看记录</text>
+    </van-grid-item> -->
+  </van-grid>
+  <view class="sports-record-page">
+    <my-calendar special-date="{{ recordList }}" wx:if="{{ recordList.length !== 0 }}" bind:dayTouch="dayTouch"/>
+    <view class="punch-time" wx:if="{{ timeList && timeList.length !== 0 }}">
+      <view>打卡时间：</view>
+      <view wx:for="{{ timeList }}" wx:key="index">{{ item }}</view>
+    </view>
+    <view class="no-time" wx:if="{{ !timeList || timeList.length === 0 }}">暂无打卡数据</view>
+  </view>
+  <van-popup show="{{ showTimePicker }}" position="bottom" custom-style="height: 50%;">
+    <van-datetime-picker type="time" value="{{ pickerDefaultTime }}" bind:confirm="onConfirmChooseTime" bind:cancel="onCloseChooseTime"/>
+  </van-popup>
+  <van-toast id="van-toast" />
 </view>

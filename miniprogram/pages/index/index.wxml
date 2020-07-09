@@ -14,11 +14,11 @@
 
   <van-row class="banner">
     <van-col span="12" class="banner-col">
-      <van-image fit="cover" width="100" height="100" src="/images/sports.png"/>
+      <van-image fit="cover" width="100" height="100" src="/images/sports.png" bind:click="toSports"/>
       <view class="info-text">已经坚持运动{{ sportsDay }}天！</view>
     </van-col>
     <van-col span="12" class="banner-col">
-      <van-image fit="cover" width="100" height="100" src="/images/reading.png"/>
+      <van-image fit="cover" width="100" height="100" src="/images/reading.png" bind:click="toDone"/>
       <view class="info-text">已经读完{{ books }}本书！</view>
     </van-col>
   </van-row>

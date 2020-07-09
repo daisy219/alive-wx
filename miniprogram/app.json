@@ -12,8 +12,6 @@
     "pages/reading/reading",
     "pages/person/person",
     "pages/enterInfo/enterInfo",
-    "pages/sportsRenew/sportsRenew",
-    "pages/sportsRecord/sportsRecord",
     "pages/readingPlan/readingPlan",
     "pages/done/done"
   ],
@@ -39,12 +37,6 @@
         "text": "读书协会",
         "iconPath": "./images/icon/reading.png",
         "selectedIconPath": "./images/icon/reading_active.png"
-      },
-      {
-        "pagePath": "pages/person/person",
-        "text": "个人中心",
-        "iconPath": "./images/icon/person.png",
-        "selectedIconPath": "./images/icon/person_active.png"
       }
     ]
   },

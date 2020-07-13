@@ -53,13 +53,13 @@ Component({
       Utils.watch(this, {
         specialDate: function (newVal) {
          this.setData({
-            specialDateStringArr: newVal.map(a => new Date(a).toLocaleDateString())
+            specialDateStringArr: newVal.map(a => Utils.yyyymmdd(new Date(a), '/'))
           });
           this.setCurrentStatus(this.data.activeDate);
         }
       })
       this.setData({
-        specialDateStringArr: this.properties.specialDate.map(a => new Date(a).toLocaleDateString())
+        specialDateStringArr: this.properties.specialDate.map(a => Utils.yyyymmdd(new Date(a), '/'))
       });
       this.setData({
         activeDate: this.properties.model
@@ -80,12 +80,10 @@ Component({
       this.setData({
         currentMonthDays: dayArr.map(a => (
           {
-            date: new Date(this.data.currentYear, this.data.currentMonth - 1, a)
-              .toLocaleDateString(),
+            date: Utils.yyyymmdd(new Date(this.data.currentYear, this.data.currentMonth - 1, a), '/'),
             dayText: a,
             special: this.data.specialDateStringArr
-              .includes(new Date(this.data.currentYear, this.data.currentMonth - 1, a)
-                .toLocaleDateString())
+              .includes(Utils.yyyymmdd(new Date(this.data.currentYear, this.data.currentMonth - 1, a), '/'))
           }
         ))
       });

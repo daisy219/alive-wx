@@ -41,8 +41,8 @@ Page({
   /**
    * 点击日期
    */
-  dayTouch(val) {
-    this.setData({ currentDay: val.detail.date });
+  async dayTouch(val) {
+    await this.setData({ currentDay: val.detail.date });
     this.showTimeList(val.detail.date)
   },
 
@@ -76,10 +76,8 @@ Page({
    * 确认选择时间
    */
   async onConfirmChooseTime(event) {
-    // console.log(this.data.currentDay);
-    // return;
     const params = {
-      date: new Date(this.data.currentDay).getMonth(),
+      date: Utils.yyyymmdd(new Date(this.data.currentDay), '/'),
       time: event.detail,
     }
     try {
